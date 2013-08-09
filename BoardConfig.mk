@@ -135,6 +135,9 @@ BOARD_SEPOLICY_UNION += \
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
 
+# Tuning
+BOARD_HARDWARE_CLASS := device/htc/memul/cmhw
+
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
