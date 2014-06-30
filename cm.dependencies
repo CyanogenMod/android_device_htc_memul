@@ -1,0 +1,6 @@
+[
+  {
+    "repository": "android_kernel_htc_mem",
+    "target_path": "kernel/htc/mem"
+  },
+]

@@ -1,0 +1,20 @@
+# system.prop for mem
+
+ro.sf.lcd_density=320
+
+ro.baseband.arch=msm
+DEVICE_PROVISIONED=1
+rild.libargs=-d /dev/smd0
+rild.libpath=/system/lib/libril-qc-qmi-1.so
+ro.vendor.extension_library=/system/lib/libqc-opt.so
+ro.telephony.default_network=9
+mobiledata.interfaces=rmnet0,rmnet1
+ro.telephony.ril_class=HTCQualcommRIL
+telephony.lteOnGsmDevice=1
+
+# Recovery
+ro.cwm.enable_key_repeat=true
+ro.cwm.repeatable_keys=114,115
+ro.cwm.forbid_format=/boot,/devlog,/fataldevlog,/ramdump,/carrier,/custdata,/firmware/radio,/firmware/adsp,/firmware/wcnss
+ro.cwm.forbid_mount=/boot,/devlog,/fataldevlog,/ramdump,/carrier,/custdata,/firmware/radio,/firmware/adsp,/firmware/wcnss
+

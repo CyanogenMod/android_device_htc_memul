@@ -1,0 +1,7 @@
+on property:service.adb.root=1
+    write /sys/class/android_usb/android0/f_adb/on 0
+    write /sys/devices/platform/android_usb/usb_function_switch 1
+    restart adbd
+    write /sys/class/android_usb/android0/f_adb/on 1
+    write /sys/devices/platform/android_usb/usb_function_switch 3
+
