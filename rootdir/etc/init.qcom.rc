@@ -298,11 +298,10 @@ service netmgrd /system/bin/netmgrd
 service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
     class late_start
 
-service thermald /system/bin/thermald
+service thermal-engine /system/bin/thermal-engine
     class main
     user root
     group root
-    disabled
 
 service dhcpcd_wlan0 /system/bin/dhcpcd -ABKLG
     disabled
@@ -409,7 +408,6 @@ on property:sys.boot_completed=1
     write /sys/keyboard/vol_wakeup 1
     # Set performance profile
     setprop sys.perf.profile 1
-    start thermald
 
 on property:init.svc.bootanim=stopped
     # Init modem
