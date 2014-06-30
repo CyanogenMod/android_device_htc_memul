@@ -173,7 +173,8 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    wcnss_service
+    wcnss_service \
+    libnetcmdiface
 
 # WiFi config
 PRODUCT_COPY_FILES += \
