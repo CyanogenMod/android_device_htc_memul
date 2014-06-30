@@ -50,6 +50,8 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
 TARGET_KERNEL_CONFIG := cm_memul_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/mem
+BOARD_KERNEL_SEPARATED_DT := true
+BOARD_CUSTOM_BOOTIMG_MK := device/htc/mem/mkbootimg.mk
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
