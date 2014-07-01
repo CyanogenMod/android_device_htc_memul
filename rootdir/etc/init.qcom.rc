@@ -273,11 +273,6 @@ on boot
 # HTC SSD Battery - END
 
 # Services start here
-service logcat /system/bin/logcat -f /data/local/tmp/bootlog
-    class main
-    user root
-    group root
-
 service akmd /system/bin/akmd
     class main
     user system
