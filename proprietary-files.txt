@@ -210,6 +210,7 @@ vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_wavelet_lib.so
 vendor/lib/libmmipl.so
 vendor/lib/libmmjpeg.so
+vendor/lib/libmmjpeg_interface.so
 vendor/lib/liboemcamera.so
 lib/libposteffect.so
 
@@ -227,6 +228,7 @@ vendor/lib/libmm-color-convertor.so
 # QMI
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
+vendor/lib/libdsnetutils.so
 vendor/lib/libdsutils.so
 vendor/lib/libidl.so
 vendor/lib/libqcci_legacy.so
@@ -245,6 +247,7 @@ lib/libnetmgr.so
 lib/libqc-opt.so
 lib/libril-qc-qmi-1.so
 lib/libril-qcril-hook-oem.so
+lib/libtime_genoff.so
 
 # Sensors
 lib/hw/sensors.msm8226.so
@@ -258,6 +261,11 @@ etc/firmware/hcheck.b03
 etc/firmware/hcheck.mdt
 
 # DRM
+vendor/firmware/cmnlib.b00
+vendor/firmware/cmnlib.b01
+vendor/firmware/cmnlib.b02
+vendor/firmware/cmnlib.b03
+vendir/firmware/cmnlib.mdt
 vendor/firmware/keymaster/keymaster.b00
 vendor/firmware/keymaster/keymaster.b01
 vendor/firmware/keymaster/keymaster.b02
