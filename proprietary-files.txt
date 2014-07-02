@@ -110,10 +110,10 @@ etc/firmware/ILP0100_IPM_Code_out.bin
 etc/firmware/ILP0100_IPM_Data_out.bin
 etc/firmware/lscbuffer_rev2.bin
 lib/hw/camera.vendor.msm8226.so
-lib/libBeautyChat.so
-lib/libcameraface.so
-lib/libcamerapp.so
-lib/libhtccamera.so
+vendor/lib/libBeautyChat.so
+vendor/lib/libcameraface.so
+vendor/lib/libcamerapp.so
+vendor/lib/libhtccamera.so
 vendor/lib/libchromatix_ov13850_common.so
 vendor/lib/libchromatix_ov13850_default_video.so
 vendor/lib/libchromatix_ov13850_hdr.so
@@ -212,16 +212,17 @@ vendor/lib/libmmipl.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmjpeg_interface.so
 vendor/lib/liboemcamera.so
-lib/libposteffect.so
+vendor/lib/libposteffect.so
 
 # GPS
 lib/hw/gps.default.so
-lib/libgps.utils.so
+vendor/lib/libgps.utils.so
 vendor/lib/libgeofence.so
-lib/libloc_api_v02.so
+vendor/lib/libloc_eng.so
+vendor/lib/libloc_api_v02.so
 
 # Media libraries
-lib/libExtendedExtractor.so
+vendor/lib/libExtendedExtractor.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
 
@@ -243,15 +244,15 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 
 # Radio
-lib/libnetmgr.so
-lib/libqc-opt.so
 lib/libril-qc-qmi-1.so
-lib/libril-qcril-hook-oem.so
-lib/libtime_genoff.so
+vendor/lib/libqc-opt.so
+vendor/lib/libnetmgr.so
+vendor/lib/libril-qcril-hook-oem.so
+vendor/lib/libtime_genoff.so
 
 # Sensors
 lib/hw/sensors.msm8226.so
-lib/libyasalgo.so
+vendor/lib/libyasalgo.so
 
 # TrustZone
 etc/firmware/hcheck.b00
