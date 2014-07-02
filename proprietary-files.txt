@@ -265,7 +265,7 @@ vendor/firmware/cmnlib.b00
 vendor/firmware/cmnlib.b01
 vendor/firmware/cmnlib.b02
 vendor/firmware/cmnlib.b03
-vendir/firmware/cmnlib.mdt
+vendor/firmware/cmnlib.mdt
 vendor/firmware/keymaster/keymaster.b00
 vendor/firmware/keymaster/keymaster.b01
 vendor/firmware/keymaster/keymaster.b02
