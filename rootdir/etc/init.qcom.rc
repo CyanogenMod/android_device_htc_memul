@@ -296,6 +296,12 @@ service rmt_storage /system/bin/rmt_storage modem_st1 modem_st2 recovery radio_c
     class core
     user root
 
+service wcnss-service /system/bin/wcnss_service
+    class main
+    user system
+    group system wifi qcom_diag radio
+    oneshot
+
 service netmgrd /system/bin/netmgrd
     class core
 
