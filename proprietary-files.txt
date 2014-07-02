@@ -1,18 +1,11 @@
-# Executables
-bin/akmd
-bin/charging
-bin/mm-qcamera-daemon
-bin/mpdecision
-bin/netmgrd
-bin/qmuxd
-bin/rmt_storage
-bin/thermal-engine
-
-# Configuration files
-etc/agps_rm
-etc/hldm.bin
-etc/hltof.bin
-etc/hltrd.bin
+# Audio
+etc/Bluetooth_cal.acdb
+etc/General_cal.acdb
+etc/Global_cal.acdb
+etc/Handset_cal.acdb
+etc/Hdmi_cal.acdb
+etc/Headset_cal.acdb
+etc/Speaker_cal.acdb
 etc/tfa/fm.drc
 etc/tfa/fm.eq
 etc/tfa/fm_l.drc
@@ -64,56 +57,30 @@ etc/tfa/voip_l.drc
 etc/tfa/voip_l.eq
 etc/tfa/voip_l.preset
 etc/tfa/voip.preset
-
-# Graphics
-etc/firmware/a225_pfp.fw
-etc/firmware/a225_pm4.fw
-etc/firmware/a225p5_pm4.fw
-etc/firmware/a300_pfp.fw
-etc/firmware/a300_pm4.fw
-etc/firmware/a330_pfp.fw
-etc/firmware/a330_pm4.fw
-etc/firmware/leia_pfp_470.fw
-etc/firmware/leia_pm4_470.fw
-vendor/lib/libCB.so
-vendor/lib/egl/eglsubAndroid.so
-vendor/lib/egl/libEGL_adreno.so
-vendor/lib/egl/libGLESv1_CM_adreno.so
-vendor/lib/egl/libGLESv2_adreno.so
-vendor/lib/egl/libq3dtools_adreno.so
-vendor/lib/libadreno_utils.so
-vendor/lib/libc2d30-a3xx.so
-vendor/lib/libc2d30.so
-vendor/lib/libC2D2.so
-vendor/lib/libgsl.so
-vendor/lib/libllvm-qcom.so
-vendor/lib/librs_adreno_sha1.so
-vendor/lib/librs_adreno.so
-vendor/lib/libRSDriver_adreno.so
-vendor/lib/libsc-a3xx.so
-
-# Audio
-etc/Bluetooth_cal.acdb
-etc/General_cal.acdb
-etc/Global_cal.acdb
-etc/Handset_cal.acdb
-etc/Hdmi_cal.acdb
-etc/Headset_cal.acdb
-etc/Speaker_cal.acdb
+lib/soundfx/libqcompostprocbundle.so
+lib/soundfx/libqcomvisualizer.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libaudcal.so
 
 # Camera
+bin/mm-qcamera-daemon
+etc/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_2_0.fw
 etc/firmware/ILP0100_IPM_Code_out.bin
 etc/firmware/ILP0100_IPM_Data_out.bin
 etc/firmware/lscbuffer_rev2.bin
 lib/hw/camera.vendor.msm8226.so
+vendor/lib/libadsprpc.so
+vendor/lib/libawb_calibration.so
 vendor/lib/libBeautyChat.so
+vendor/lib/libcamera_aec.so
+vendor/lib/libcamera_af.so
+vendor/lib/libcamera_awb.so
 vendor/lib/libcameraface.so
 vendor/lib/libcamerapp.so
-vendor/lib/libhtccamera.so
 vendor/lib/libchromatix_ov13850_common.so
 vendor/lib/libchromatix_ov13850_default_video.so
 vendor/lib/libchromatix_ov13850_hdr.so
@@ -173,7 +140,9 @@ vendor/lib/libchromatix_skuf_ov5648_p5v23c_common.so
 vendor/lib/libchromatix_skuf_ov5648_p5v23c_default_video.so
 vendor/lib/libchromatix_skuf_ov5648_p5v23c_preview.so
 vendor/lib/libchromatix_skuf_ov5648_p5v23c_snapshot.so
-vendor/lib/libmmcamera_interface.so
+vendor/lib/libfastcvadsp_stub.so
+vendor/lib/libfastcvopt.so
+vendor/lib/libhtccamera.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_iface_modules.so
@@ -185,18 +154,19 @@ vendor/lib/libmmcamera2_stats_algorithm.so
 vendor/lib/libmmcamera2_stats_modules.so
 vendor/lib/libmmcamera2_vpe_module.so
 vendor/lib/libmmcamera2_wnr_module.so
-vendor/lib/libmmcamera_SKUAA_ST_gc0339.so
-vendor/lib/libmmcamera_SKUAB_ST_s5k4e1.so
 vendor/lib/libmmcamera_faceproc.so
 vendor/lib/libmmcamera_hdr_gb_lib.so
 vendor/lib/libmmcamera_hdr_lib.so
 vendor/lib/libmmcamera_imglib.so
+vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmcamera_ofilm_oty5f03_eeprom.so
 vendor/lib/libmmcamera_ov13850.so
 vendor/lib/libmmcamera_ov5648_oty5f03.so
 vendor/lib/libmmcamera_ov8865_q8v18a.so
 vendor/lib/libmmcamera_s5k5e_onelane.so
+vendor/lib/libmmcamera_SKUAA_ST_gc0339.so
 vendor/lib/libmmcamera_skuab_shinetech_gc0339.so
+vendor/lib/libmmcamera_SKUAB_ST_s5k4e1.so
 vendor/lib/libmmcamera_skuf_ov12830_p12v01c.so
 vendor/lib/libmmcamera_skuf_ov5648_p5v23c.so
 vendor/lib/libmmcamera_sp1628.so
@@ -209,24 +179,72 @@ vendor/lib/libmmcamera_truly_cm7700_eeprom.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_wavelet_lib.so
 vendor/lib/libmmipl.so
-vendor/lib/libmmjpeg.so
 vendor/lib/libmmjpeg_interface.so
+vendor/lib/libmmjpeg.so
 vendor/lib/liboemcamera.so
 vendor/lib/libposteffect.so
+vendor/lib/libqomx_core.so
+vendor/lib/rfsa/adsp/libadsp_denoise_skel.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
 
 # GPS
+etc/agps_rm
 lib/hw/gps.default.so
-vendor/lib/libgps.utils.so
 vendor/lib/libgeofence.so
-vendor/lib/libloc_eng.so
+vendor/lib/libgps.utils.so
+vendor/lib/libizat_core.so
+vendor/lib/liblbs_core.so
 vendor/lib/libloc_api_v02.so
+vendor/lib/libloc_core.so
+vendor/lib/libloc_ds_api.so
+vendor/lib/libloc_eng.so
 
-# Media libraries
+# Graphics
+etc/firmware/a225p5_pm4.fw
+etc/firmware/a225_pfp.fw
+etc/firmware/a225_pm4.fw
+etc/firmware/a300_pfp.fw
+etc/firmware/a300_pm4.fw
+etc/firmware/a330_pfp.fw
+etc/firmware/a330_pm4.fw
+etc/firmware/leia_pfp_470.fw
+etc/firmware/leia_pm4_470.fw
+vendor/lib/egl/eglsubAndroid.so
+vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/libadreno_utils.so
+vendor/lib/libC2D2.so
+vendor/lib/libc2d30-a3xx.so
+vendor/lib/libc2d30.so
+vendor/lib/libCB.so
+vendor/lib/libgsl.so
+vendor/lib/libllvm-qcom.so
+vendor/lib/librs_adreno_sha1.so
+vendor/lib/librs_adreno.so
+vendor/lib/libRSDriver_adreno.so
+vendor/lib/libsc-a3xx.so
+
+# Media
 vendor/lib/libExtendedExtractor.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
 
+# NFC
+vendor/firmware/libpn547_fw.so
+
+# Power
+bin/charging
+bin/mpdecision
+bin/thermal-engine
+vendor/lib/libthermalclient.so
+
 # QMI
+bin/qmuxd
+bin/rmt_storage
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsnetutils.so
@@ -235,22 +253,24 @@ vendor/lib/libidl.so
 vendor/lib/libqcci_legacy.so
 vendor/lib/libqdi.so
 vendor/lib/libqdp.so
-vendor/lib/libqmi.so
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_client_qmux.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
+vendor/lib/libqmi.so
 
 # Radio
+bin/netmgrd
+lib/libqc-opt.so
 lib/libril-qc-qmi-1.so
-vendor/lib/libqc-opt.so
 vendor/lib/libnetmgr.so
 vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libtime_genoff.so
 
 # Sensors
+bin/akmd
 lib/hw/sensors.msm8226.so
 vendor/lib/libyasalgo.so
 
@@ -275,4 +295,3 @@ vendor/firmware/keymaster/keymaster.mdt
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L3.so
-
