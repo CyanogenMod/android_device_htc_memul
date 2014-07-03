@@ -203,6 +203,9 @@ on boot
 # Set touch permissions
     chown system system /sys/android_touch/unlock
 
+# ADSP
+    write /sys/kernel/boot_adsp/boot 1
+
 # Services start here
 service akmd /system/bin/akmd
     class main
