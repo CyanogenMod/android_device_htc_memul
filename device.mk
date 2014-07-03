@@ -77,6 +77,10 @@ PRODUCT_PACKAGES += \
     libgenlock \
     liboverlay
 
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config/gps.conf:system/etc/gps.conf
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/device-keypad.kl:system/usr/keylayout/device-keypad.kl \
