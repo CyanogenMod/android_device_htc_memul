@@ -34,6 +34,10 @@ on early-init
     write /sys/block/mmcblk0/queue/scheduler noop
     write /sys/block/mmcblk0/bdi/read_ahead_kb 512
     write /sys/block/mmcblk1/bdi/read_ahead_kb 512
+    write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
 
 on init
     mkdir /mnt/shell/emulated 0700 shell shell
@@ -220,6 +224,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
     user root
+    disabled
 
 service qmuxd /system/bin/qmuxd
     class core
@@ -322,19 +327,10 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
 
-on property:init.svc.bootanim=running
-    # Switch to NOOP and performance mode while booting
-    setprop sys.perf.profile 3
-    write /sys/block/mmcblk0/queue/scheduler noop
-
 on property:init.svc.bootanim=stopped
     # Overwrite ActivityManager's low memory killer settings
     write /sys/module/lowmemorykiller/parameters/adj "2,4,7,8,9,12"
     write /sys/module/lowmemorykiller/parameters/minfree "15360,18432,21504,23040,34576,40720"
-
-    # Switch to ROW and balanced mode after boot for better UX
-    setprop sys.perf.profile 2
-    write /sys/block/mmcblk0/queue/scheduler row
 
 on property:init.svc.thermal-engine=stopped
     write /sys/power/pnpmgr/thermal/thermal_final 9999999
