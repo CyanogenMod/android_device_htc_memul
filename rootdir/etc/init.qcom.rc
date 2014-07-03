@@ -166,10 +166,6 @@ on boot
 
     chmod 0644 /proc/cmdline
 
-    # create symlink to qcn wpa_supplicant folder
-    symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
-    symlink /dev/socket/wpa_wlan0 /data/system/wpa_supplicant/wlan0
-
     # NETWORK: NAT setting
     # To prevent out of WINDOW ACK from making
     # connection tracking to treat them as INVALID packet
