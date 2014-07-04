@@ -4,16 +4,18 @@
 
 #<src>                                             <mnt_point>    <type> <mnt_flags>         <fs_mgr_flags>
 # MMC
-/dev/block/platform/msm_sdcc.1/by-name/adsp        /firmware/adsp  vfat ro,shortname=lower   wait
 /dev/block/platform/msm_sdcc.1/by-name/boot        /boot           emmc defaults             defaults
-/dev/block/platform/msm_sdcc.1/by-name/cache       /cache          ext4 noatime,nosuid,nodev wait,check
-/dev/block/platform/msm_sdcc.1/by-name/devlog      /devlog         ext4 noatime,nosuid,nodev wait
-/dev/block/platform/msm_sdcc.1/by-name/fataldevlog /fataldevlog    ext4 noatime,nosuid,nodev wait
-/dev/block/platform/msm_sdcc.1/by-name/radio       /firmware/radio vfat ro,shortname=lower   wait
 /dev/block/platform/msm_sdcc.1/by-name/recovery    /recovery       emmc defaults             defaults
 /dev/block/platform/msm_sdcc.1/by-name/system      /system         ext4 ro,noatime           wait
 /dev/block/platform/msm_sdcc.1/by-name/userdata    /data           ext4 noatime,nosuid,nodev wait,check,encryptable=/dev/block/platform/msm_sdcc.1/by-name/extra
+/dev/block/platform/msm_sdcc.1/by-name/cache       /cache          ext4 noatime,nosuid,nodev wait,check
+
+/dev/block/platform/msm_sdcc.1/by-name/adsp        /firmware/adsp  vfat ro,shortname=lower   wait
+/dev/block/platform/msm_sdcc.1/by-name/radio       /firmware/radio vfat ro,shortname=lower   wait
 /dev/block/platform/msm_sdcc.1/by-name/wcnss       /firmware/wcnss vfat ro,shortname=lower   wait
+
+/dev/block/platform/msm_sdcc.1/by-name/devlog      /devlog         ext4 noatime,nosuid,nodev wait
+/dev/block/platform/msm_sdcc.1/by-name/fataldevlog /fataldevlog    ext4 noatime,nosuid,nodev wait
 
 # SD Card
 /devices/msm_sdcc.2/mmc_host                       auto            vfat defaults             voldmanaged=sdcard1:auto,noemulatedsd
