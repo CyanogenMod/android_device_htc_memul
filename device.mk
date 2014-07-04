@@ -39,6 +39,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/soundimage/srsmodels.lic:system/etc/soundimage/srsmodels.lic \
     $(LOCAL_PATH)/audio/snd_soc_msm/snd_soc_msm_Tapan:system/etc/snd_soc_msm/snd_soc_msm_Tapan
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+   init.qcom.bt.bluedroid.sh \
+   init.qcom.bt.sh
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720

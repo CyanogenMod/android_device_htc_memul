@@ -119,6 +119,7 @@ on fs
     mount tmpfs tmpfs /mnt/securedata mode=0755,gid=1000
 
     setprop ro.crypto.fuse_sdcard true
+    write /sys/kernel/boot_adsp/boot 1
 
 on post-fs-data
     # Create symbolic links to mount points outside of /data
@@ -138,6 +139,8 @@ on post-fs-data
     mkdir /data/misc/wifi/hostapd 0770 wifi wifi
     mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0771 wifi wifi
+
+    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 
     mkdir /data/misc/dhcp 0770 dhcp dhcp
 
@@ -175,10 +178,6 @@ on boot
     # connection tracking to treat them as INVALID packet
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
 
-    # bluetooth MAC address programming
-    chown bluetooth bluetooth /sys/module/htc_bdaddress/parameters/bdaddress
-    setprop ro.bt.bdaddr_path /sys/module/htc_bdaddress/parameters/bdaddress
-
     write /proc/sys/net/ipv6/conf/p2p0/disable_ipv6 1
 
     # Create symlink for fb1 as HDMI
@@ -207,8 +206,13 @@ on boot
 # Set touch permissions
     chown system system /sys/android_touch/unlock
 
-# ADSP
-    write /sys/kernel/boot_adsp/boot 1
+# Bluetooth
+    chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
+    chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
+
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chmod 0660 /sys/class/rfkill/rfkill0/state
 
 # Services start here
 service akmd /system/bin/akmd
@@ -220,6 +224,54 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user system
     group system camera inet graphics
+
+service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
+    class late_start
+    user root
+    oneshot
+
+service ftp /system/bin/sdptool add --handle=0x1ff20 --psm=5257 --channel=20 FTP
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service ftp_del /system/bin/sdptool del 0x1ff20
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service hciattach /system/bin/sh /system/etc/init.qcom.bt.bluedroid.sh
+    class late_start
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service map0 /system/bin/sdptool add --handle=0x1ff16 --channel=16 MAS0
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service map0_del /system/bin/sdptool del 0x1ff16
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service map1 /system/bin/sdptool add --handle=0x1ff17 --channel=17 MAS1
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service map1_del /system/bin/sdptool del 0x1ff17
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
@@ -306,6 +358,19 @@ service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw
 service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
     class late_start
     disabled
+
+# Properties start here
+on property:bluetooth.hciattach=true
+    start hciattach
+
+on property:bluetooth.hciattach=false
+    setprop bluetooth.status off
+
+on property:bluetooth.sap.status=running
+    start bt-sap
+
+on property:bluetooth.sap.status=stopped
+    stop bt-sap
 
 on property:sys.boot_completed=1
     write /sys/module/lpm_resources/enable_low_power/l2 2
