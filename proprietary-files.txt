@@ -263,9 +263,9 @@ vendor/lib/libqmi.so
 
 # Radio
 bin/netmgrd
-lib/libqc-opt.so
-lib/libril-qc-qmi-1.so
 vendor/lib/libnetmgr.so
+vendor/lib/libqc-opt.so
+vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libtime_genoff.so
 

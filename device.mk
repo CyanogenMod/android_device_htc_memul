@@ -47,22 +47,6 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_PACKAGES += \
     camera.msm8226
 
-# Common build properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    com.qc.hardware=true \
-    debug.composition.type=gpu \
-    debug.egl.hw=1 \
-    debug.mdpcomp.logs=0 \
-    debug.sf.hw=1 \
-    dev.pm.dyn_samplingrate=1 \
-    lpa.decode=true \
-    persist.hwc.mdpcomp.enable=true \
-    persist.thermal.monitor=true \
-    ro.qc.sdk.audio.fluencetype=fluence \
-    ro.telephony.call_ring.multiple=0 \
-    ro.use_data_netmgrd=true \
-    wifi.interface=wlan0
-
 # Filesystem tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
@@ -215,14 +199,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:/system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:/system/etc/wifi/wpa_supplicant_overlay.conf
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.timed.enable=true \
-    persist.gps.qmienabled=true \
-    ro.opengles.version=196608
 
 # We have enough space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
