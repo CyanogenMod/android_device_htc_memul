@@ -87,6 +87,7 @@
 /dev/smdcnt_rev7          0640   radio      radio
 /dev/smdcnt_rev8          0640   radio      radio
 /dev/smd_cxm_qmi          0640   radio      radio
+/dev/time_helper          0644   system     camera
 /dev/ttyHSL1              0660   system     system
 /dev/ttyHSUSB1            0600   system     system
 /dev/uio0                 0660   system     system
