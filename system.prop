@@ -8,6 +8,7 @@ ro.qc.sdk.audio.fluencetype=fluence
 persist.gps.qc_nlp_in_use=0
 
 # Graphics
+debug.composition.type=dyn
 debug.egl.hw=1
 debug.mdpcomp.logs=0
 debug.sf.hw=1
