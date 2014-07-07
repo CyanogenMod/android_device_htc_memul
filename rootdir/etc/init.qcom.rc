@@ -127,6 +127,9 @@ on post-fs-data
     symlink /mnt/efs /data/efs
     symlink /mnt/securedata /data/secure/data
 
+    # Camera blobs want debugfs in /data
+    symlink /sys/kernel/debug /data/d
+
     # QC audio/radio
     mkdir /data/audio 2775 media audio
     mkdir /data/radio 2770 radio radio
