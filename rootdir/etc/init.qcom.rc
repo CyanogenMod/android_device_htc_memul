@@ -294,7 +294,7 @@ service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
 service qmuxd /system/bin/qmuxd
     class core
     user radio
-    group radio audio gps
+    group radio audio gps bluetooth
 
 service rmt_storage /system/bin/rmt_storage modem_st1 modem_st2 fsc recovery radio_config cdma_record
     class core
