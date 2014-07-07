@@ -168,7 +168,8 @@ PRODUCT_PACKAGES += \
 
 # QCOM rngd
 PRODUCT_PACKAGES += \
-    qrngd
+    qrngd \
+    qrngp
 
 # Ramdisk
 PRODUCT_PACKAGES += \

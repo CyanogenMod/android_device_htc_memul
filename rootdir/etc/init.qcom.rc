@@ -134,6 +134,9 @@ on post-fs-data
     # Link widevine drm library path
     symlink /system/vendor/lib /vendor/lib
 
+    # time-services
+    mkdir /data/time 0700 system system
+
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/wifi/hostapd 0770 wifi wifi
@@ -303,6 +306,18 @@ service wcnss-service /system/bin/wcnss_service
 service netmgrd /system/bin/netmgrd
     class core
 
+service qrngd /system/bin/qrngd -f
+   class main
+   user root
+   group root
+
+service qrngp /system/bin/qrngp
+    class main
+    user root
+    group root
+    oneshot
+    disabled
+
 service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
 
@@ -366,7 +381,22 @@ service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk
     class late_start
     disabled
 
+service time_daemon /system/bin/time_daemon
+    user root
+    group root
+    oneshot
+    disabled
+
 # Properties start here
+on property:persist.thermal.monitor=true
+    start thermald
+
+on property:persist.timed.enable=true
+    start time_daemon
+
+on property:ro.use_data_netmgrd=false
+    stop netmgrd
+
 on property:bluetooth.hciattach=true
     start hciattach
 
@@ -380,6 +410,8 @@ on property:bluetooth.sap.status=stopped
     stop bt-sap
 
 on property:sys.boot_completed=1
+    start qrngp
+
     write /sys/module/lpm_resources/enable_low_power/l2 2
     write /sys/module/lpm_resources/enable_low_power/pxo 1
     write /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled 1
