@@ -1010,10 +1010,6 @@
         <ctl name="ANC1 FB MUX" value="EAR_HPH_L" />
     </path>
 
-    <path name="headset-mic">
-        <path name="adc2" />
-    </path>
-
     <path name="voice-handset">
         <path name="earpiece-voice" />
     </path>
