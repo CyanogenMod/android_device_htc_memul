@@ -16,7 +16,7 @@
 /dev/adsprpc-smd          0664   system     system
 /dev/akm8963_dev          0660   system     system
 /dev/cm3602               0640   compass    system
-/dev/diag                 0660   radio      radio
+/dev/diag                 0666   radio      radio
 /dev/diag_arm9            0660   radio      radio
 /dev/genlock              0666   system     system
 /dev/hw_random            0660   system     system
@@ -99,12 +99,12 @@
 /dev/wcnss_wlan           0660   system     system
 
 /sys/devices/f9928000.i2c/i2c-4/4-0033/leds/flashlight  brightness  0666  system  system
-/sys/devices/leds-qpnp-eeceec00/leds/green  blink       0644  system  system
-/sys/devices/leds-qpnp-eeceec00/leds/green  brightness  0644  system  system
-/sys/devices/leds-qpnp-eeceec00/leds/green  off_timer   0644  system  system
-/sys/devices/leds-qpnp-eeceee00/leds/amber  blink       0644  system  system
-/sys/devices/leds-qpnp-eeceee00/leds/amber  brightness  0644  system  system
-/sys/devices/leds-qpnp-eeceee00/leds/amber  off_timer   0644  system  system
+/sys/devices/leds-qpnp-*  leds/green/blink       0644  system  system
+/sys/devices/leds-qpnp-*  leds/green/brightness  0644  system  system
+/sys/devices/leds-qpnp-*  leds/green/off_timer   0644  system  system
+/sys/devices/leds-qpnp-*  leds/amber/blink       0644  system  system
+/sys/devices/leds-qpnp-*  leds/amber/brightness  0644  system  system
+/sys/devices/leds-qpnp-*  leds/amber/off_timer   0644  system  system
 /sys/devices/msm_sdcc.1  polling  0644  system  system
 /sys/devices/platform/htc_battery/power_supply/battery  full_level_dis_batt_chg  0220  system  system
 /sys/devices/platform/htc_battery/power_supply/battery  navigation               0220  system  system
@@ -117,7 +117,7 @@
 /sys/devices/virtual/compass/akm8963        delay_fusion          0660  system  system
 /sys/devices/virtual/compass/akm8963        delay_mag             0660  system  system
 /sys/devices/virtual/compass/akm8963        enable_acc            0660  system  system
-/sys/devices/virtual/compass/akm8963        enable_fusioni        0660  system  system
+/sys/devices/virtual/compass/akm8963        enable_fusion         0660  system  system
 /sys/devices/virtual/compass/akm8963        enable_mag            0660  system  system
 /sys/devices/virtual/graphics/fb0           idle_time             0664  system  graphics
 /sys/devices/virtual/htc_accessory/fm       flag        0644  system  system
