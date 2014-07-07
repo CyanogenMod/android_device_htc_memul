@@ -228,8 +228,8 @@ service akmd /system/bin/akmd
 
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
-    user system
-    group system camera inet graphics
+    user camera
+    group camera system inet input graphics
 
 service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
     class late_start
