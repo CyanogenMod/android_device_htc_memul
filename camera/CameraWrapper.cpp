@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012, The CyanogenMod Project
+ * Copyright (C) 2014, The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,8 @@
 *
 */
 
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
+#define LOG_PARAMETERS
 
 #define LOG_TAG "CameraWrapper"
 #include <cutils/log.h>
@@ -56,7 +57,7 @@ camera_module_t HAL_MODULE_INFO_SYM = {
          version_major: 1,
          version_minor: 0,
          id: CAMERA_HARDWARE_MODULE_ID,
-         name: "M4 Camera Wrapper",
+         name: "MEMUL Camera Wrapper",
          author: "The CyanogenMod Project",
          methods: &camera_module_methods,
          dso: NULL, /* remove compilation warnings */
@@ -104,7 +105,7 @@ static char *camera_fixup_getparams(int id, const char *settings)
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
 
-#if !LOG_NDEBUG
+#ifdef LOG_PARAMETERS
     ALOGV("%s: original parameters:", __FUNCTION__);
     params.dump();
 #endif
@@ -124,6 +125,8 @@ static char *camera_fixup_getparams(int id, const char *settings)
     /* Disable face detection */
     params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
     params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
+    params.set("qc-max-num-requested-faces", "0");
+    params.set(android::CameraParameters::KEY_FACE_DETECTION, "off");
 
     /* Advertise video HDR values */
     params.set(KEY_VIDEO_HDR_VALUES, "off,on");
@@ -137,7 +140,6 @@ static char *camera_fixup_getparams(int id, const char *settings)
     }
 
     params.set("preview-frame-rate-mode", "frame-rate-fixed");
-    params.set(android::CameraParameters::KEY_PREVIEW_FPS_RANGE, "10000,60000");
 
     /* Fix rotation missmatch */
     switch (rotation) {
@@ -170,7 +172,7 @@ static char *camera_fixup_getparams(int id, const char *settings)
         params.set(android::CameraParameters::KEY_FOCAL_LENGTH, "1.59");
     }
 
-#if !LOG_NDEBUG
+#ifdef LOG_PARAMETERS
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
 #endif
@@ -190,7 +192,7 @@ static char *camera_fixup_setparams(int id, const char *settings)
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
 
-#if !LOG_NDEBUG
+#ifdef LOG_PARAMETERS
     ALOGV("%s: original parameters:", __FUNCTION__);
     params.dump();
 #endif
@@ -210,18 +212,11 @@ static char *camera_fixup_setparams(int id, const char *settings)
     /* Disable face detection */
     params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
     params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
+    params.set("qc-max-num-requested-faces", "0");
+    params.set(android::CameraParameters::KEY_FACE_DETECTION, "off");
 
     /* Enable fixed fps mode */
     params.set("preview-frame-rate-mode", "frame-rate-fixed");
-    params.set("preview-fps-range", "20000,60000");
-
-    /* Fix video HDR values */
-    if (!strcmp(videoHdr, "on")) {
-        params.set(KEY_VIDEO_HDR, "true");
-    }
-    if (!strcmp(videoHdr, "off")) {
-        params.set(KEY_VIDEO_HDR, "false");
-    }
 
     if (!isVideo && id == 0) {
         /* Disable OIS, set continuous burst to prevent crash */
@@ -245,7 +240,7 @@ static char *camera_fixup_setparams(int id, const char *settings)
         params.set(android::CameraParameters::KEY_FOCUS_MODE, "infinity");
     }
 
-#if !LOG_NDEBUG
+#ifdef LOG_PARAMETERS
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
 #endif
