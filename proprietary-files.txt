@@ -180,8 +180,6 @@ vendor/lib/libmmcamera_truly_cm7700_eeprom.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_wavelet_lib.so
 vendor/lib/libmmipl.so
-vendor/lib/libmmjpeg_interface.so
-vendor/lib/libmmjpeg.so
 vendor/lib/liboemcamera.so
 vendor/lib/libposteffect.so
 vendor/lib/libqomx_core.so
@@ -247,15 +245,31 @@ vendor/lib/libc2d30.so
 vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-qcom.so
+vendor/lib/libOpenCL.so
+vendor/lib/libOpenVG.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsc-a3xx.so
 
 # Media
+etc/firmware/venus.b00
+etc/firmware/venus.b01
+etc/firmware/venus.b02
+etc/firmware/venus.b03
+etc/firmware/venus.b04
+etc/firmware/venus.mbn
+etc/firmware/venus.mdt
 vendor/lib/libExtendedExtractor.so
 vendor/lib/libI420colorconvert.so
+vendor/lib/libjpegdhw.so
+vendor/lib/libjpegehw.so
 vendor/lib/libmm-color-convertor.so
+vendor/lib/libmmjpeg_interface.so
+vendor/lib/libmmjpeg.so
+vendor/lib/libmmqjpeg_codec.so
+vendor/lib/libqomx_jpegdec.so
+vendor/lib/libqomx_jpegenc.so
 
 # NFC
 lib/hw/nfc_nci.mem.so
