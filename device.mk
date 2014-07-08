@@ -105,19 +105,18 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 ifeq ($(TARGET_BUILD_VARIANT),user)
-    NFCEE_ACCESS_PATH := device/htc/m8/configs/nfcee_access.xml
+    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/configs/nfcee_access.xml
 else
-    NFCEE_ACCESS_PATH := device/htc/m8/configs/nfcee_access_debug.xml
+    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/configs/nfcee_access_debug.xml
 endif
+
 PRODUCT_COPY_FILES += \
-    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
+    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
+    $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
 
 PRODUCT_PACKAGES += \
-    nfc.msm8226 \
-    libnfc \
-    libnfc_ndef \
-    libnfc_jni \
-    Nfc \
+    NfcNci \
     Tag \
     com.android.nfc_extras
 

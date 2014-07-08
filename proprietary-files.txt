@@ -258,6 +258,7 @@ vendor/lib/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
 
 # NFC
+lib/hw/nfc_nci.mem.so
 vendor/firmware/libpn547_fw.so
 
 # Power

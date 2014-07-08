@@ -199,6 +199,10 @@ on boot
     # Create directory for gpsone daemon
     mkdir /data/misc/gpsone_d 0770 system gps
 
+# NFC
+    mkdir /data/nfc 0770 nfc nfc
+    mkdir /data/nfc/param 0770 nfc nfc
+
 # For Flashlight Restriction
     chown system system /sys/camera_led_status/led_hotspot_status
     chown radio system /sys/camera_led_status/led_ril_status
