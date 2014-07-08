@@ -56,7 +56,6 @@ BOARD_CUSTOM_BOOTIMG_MK := device/htc/mem/mkbootimg.mk
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_SEPARATE_SPKR_BACKEND := true
-BOARD_AUDIO_AMPLIFIER := device/htc/mem/libaudioamp
 AUDIO_FEATURE_DISABLED_MULTI_VOICE_SESSIONS := true
 
 # Bluetooth
