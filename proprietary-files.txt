@@ -306,12 +306,15 @@ vendor/lib/libnetmgr.so
 vendor/lib/libqc-opt.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
--vendor/lib/libtime_genoff.so
 
 # Sensors
 bin/akmd
 lib/hw/sensors.msm8226.so
 vendor/lib/libyasalgo.so
+
+# Time
+bin/time_daemon
+-vendor/lib/libtime_genoff.so
 
 # TrustZone
 etc/firmware/hcheck.b00
