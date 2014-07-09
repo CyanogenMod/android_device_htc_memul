@@ -24,11 +24,11 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
-$(call inherit-product, device/htc/mem/full_mem.mk)
+$(call inherit-product, device/htc/memul/full_memul.mk)
 
 # Device naming
-PRODUCT_DEVICE := mem
-PRODUCT_NAME := cm_mem
+PRODUCT_DEVICE := memul
+PRODUCT_NAME := cm_memul
 PRODUCT_BRAND := htc
 PRODUCT_MODEL := One Mini 2
 PRODUCT_MANUFACTURER := HTC

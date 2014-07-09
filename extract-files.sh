@@ -2,7 +2,7 @@
 
 set -e
 
-export DEVICE=mem
+export DEVICE=memul
 export VENDOR=htc
 
 if [ $# -eq 0 ]; then

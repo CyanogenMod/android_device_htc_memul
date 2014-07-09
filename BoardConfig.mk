@@ -38,7 +38,7 @@ AUDIO_FEATURE_DISABLED_MULTI_VOICE_SESSIONS := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/mem/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/memul/bluetooth
 
 # Board
 BOARD_VENDOR := htc
@@ -47,7 +47,7 @@ TARGET_BOARD_PLATFORM := msm8226
 TARGET_USES_QCOM_BSP := true
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := mem
+TARGET_BOOTLOADER_BOARD_NAME := memul
 TARGET_NO_BOOTLOADER := true
 
 # Camera
@@ -73,17 +73,17 @@ TARGET_QCOM_DISPLAY_VARIANT := caf-new
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 USE_OPENGL_RENDERER := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-BOARD_EGL_CFG := device/htc/mem/configs/egl.cfg
+BOARD_EGL_CFG := device/htc/memul/configs/egl.cfg
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3
 TARGET_KERNEL_CONFIG := cm_memul_defconfig
-TARGET_KERNEL_SOURCE := kernel/htc/mem
+TARGET_KERNEL_SOURCE := kernel/htc/memul
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
-BOARD_CUSTOM_BOOTIMG_MK := device/htc/mem/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/htc/memul/mkbootimg.mk
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -96,7 +96,7 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 TARGET_POWERHAL_VARIANT := qcom
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/htc/mem/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/htc/memul/rootdir/etc/fstab.qcom
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -108,7 +108,7 @@ BOARD_PROVIDES_LIBRIL := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/htc/mem/sepolicy
+    device/htc/memul/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     app.te \
@@ -155,4 +155,4 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP := "ap"
 
 # inherit from the proprietary version
--include vendor/htc/mem/BoardConfigVendor.mk
+-include vendor/htc/memul/BoardConfigVendor.mk

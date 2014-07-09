@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export DEVICE=mem
+export DEVICE=memul
 export VENDOR=htc
 
 OUTDIR=vendor/$VENDOR/$DEVICE
@@ -97,7 +97,7 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifneq (\$(filter mem,\$(TARGET_DEVICE)),)
+ifneq (\$(filter memul,\$(TARGET_DEVICE)),)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := libtime_genoff

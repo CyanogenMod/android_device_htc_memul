@@ -1,7 +1,7 @@
 [
   {
-    "repository": "android_kernel_htc_mem",
-    "target_path": "kernel/htc/mem"
+    "repository": "android_kernel_htc_memul",
+    "target_path": "kernel/htc/memul"
   },
   {
     "repository": "android_device_qcom_common",
