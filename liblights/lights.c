@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2014 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,9 +39,6 @@ static int g_backlight = 255;
 
 char const*const AMBER_LED_FILE = "/sys/class/leds/amber/brightness";
 char const*const GREEN_LED_FILE = "/sys/class/leds/green/brightness";
-
-char const*const BUTTON_FILE = "/sys/class/leds/button-backlight/brightness";
-char const*const BUTTON_CURRENTS_FILE = "/sys/class/leds/button-backlight/currents";
 
 char const*const AMBER_BLINK_FILE = "/sys/class/leds/amber/blink";
 char const*const GREEN_BLINK_FILE = "/sys/class/leds/green/blink";
@@ -220,14 +217,7 @@ static int rgb_to_brightness(struct light_state_t const* state)
 
 static int set_light_buttons(struct light_device_t* dev,
                              struct light_state_t const* state) {
-  int err = 0;
-  int brightness = rgb_to_brightness(state);
-  pthread_mutex_lock(&g_lock);
-  err = write_int(BUTTON_FILE, brightness);
-  err = write_int(BUTTON_CURRENTS_FILE, (brightness / 25));
-  pthread_mutex_unlock(&g_lock);
-
-  return 0;
+  return 0; /* No physical buttons on this device */
 }
 
 static int set_light_backlight(struct light_device_t* dev,
