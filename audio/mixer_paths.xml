@@ -981,7 +981,7 @@
     </path>
 
     <path name="speaker-mic">
-        <path name="dmic1" />
+        <path name="dmic-endfire" />
     </path>
 
     <path name="handset">
