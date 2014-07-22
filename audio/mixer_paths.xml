@@ -1032,10 +1032,11 @@
 
     <path name="speaker-and-headphones">
         <path name="headphones" />
-        <ctl name="RX4 MIX1 INP1" value="RX2" />
-        <ctl name="RX4 MIX1 INP2 Mux" value="RX1" />
-        <ctl name="SPK DAC Switch" value="1" />
-        <ctl name="COMP0 Switch" value="1" />
+    </path>
+
+    <path name="low-latency-playback speaker-and-headphones">
+        <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia5" value="1" />
     </path>
 
     <path name="usb-headphones">
