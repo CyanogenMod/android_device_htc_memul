@@ -403,6 +403,10 @@
         <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia5" value="1" />
     </path>
 
+    <path name="low-latency-playback voice-speaker">
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia5" value="1" />
+    </path>
+
     <path name="low-latency-playback speaker-headset">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
         <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia5" value="1" />
@@ -411,6 +415,11 @@
     <path name="low-latency-playback speaker-and-hdmi">
         <path name="low-latency-playback hdmi" />
         <path name="low-latency-playback speaker" />
+    </path>
+
+    <path name="low-latency-playback speaker-and-headphones">
+        <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia5" value="1" />
     </path>
 
     <path name="compress-offload-playback">
@@ -1015,11 +1024,11 @@
     </path>
 
     <path name="voice-speaker">
-        <path name="voice-call voice-speaker" />
+        <path name="speaker" />
     </path>
 
     <path name="voice-speaker-mic">
-        <path name="speaker-dmic-endfire" />
+        <path name="line-vr" />
     </path>
 
     <path name="voice-headphones">
@@ -1032,11 +1041,6 @@
 
     <path name="speaker-and-headphones">
         <path name="headphones" />
-    </path>
-
-    <path name="low-latency-playback speaker-and-headphones">
-        <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
-        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia5" value="1" />
     </path>
 
     <path name="usb-headphones">
