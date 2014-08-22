@@ -139,9 +139,6 @@ BOARD_USES_QC_TIME_SERVICES := true
 # Tuning
 BOARD_HARDWARE_CLASS := device/htc/memul/cmhw
 
-# Vold
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-
 # Webkit
 ENABLE_WEBGL := true
 TARGET_FORCE_CPU_UPLOAD := true
