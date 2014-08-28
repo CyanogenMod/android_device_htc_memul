@@ -213,6 +213,9 @@ on boot
     chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
     chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
 
+# Activate ZRAM
+    swapon_all fstab.qcom
+
 # Services start here
 service akmd /system/bin/akmd
     class main
