@@ -279,6 +279,7 @@ service iprenew_wlan0 /system/bin/dhcpcd -n
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
     user root
+    group root system
     disabled
 
 service netmgrd /system/bin/netmgrd
