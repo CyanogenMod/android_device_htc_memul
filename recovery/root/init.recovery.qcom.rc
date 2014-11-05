@@ -1,0 +1,32 @@
+on boot
+    start chargeled
+    start choice_fn
+
+on property:sys.usb.config=none
+    write /sys/devices/platform/android_usb/usb_function_switch 1
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=adb
+    write /sys/devices/platform/android_usb/usb_function_switch 3
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mtp,adb
+    write /sys/devices/platform/android_usb/usb_function_switch 130
+    setprop sys.usb.state ${sys.usb.config}
+
+service chargeled /sbin/chargeled
+    disabled
+
+service choice_fn /sbin/choice_fn
+    oneshot
+
+service detect_key /sbin/detect_key
+    disabled
+    oneshot
+
+service offmode_charging /sbin/offmode_charging
+    disabled
+
+service power_test /sbin/power_test
+    disabled
+    oneshot
