@@ -95,6 +95,7 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 TARGET_POWERHAL_VARIANT := qcom
 
 # Recovery
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 TARGET_RECOVERY_FSTAB := device/htc/memul/rootdir/etc/fstab.qcom
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
