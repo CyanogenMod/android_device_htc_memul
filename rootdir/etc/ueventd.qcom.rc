@@ -112,6 +112,9 @@
 /sys/devices/platform/htc_battery/power_supply/battery        network_search           0220  radio      radio
 /sys/devices/platform/htc_battery/power_supply/battery        phone_call               0220  radio      radio
 /sys/devices/platform/htc_battery/power_supply/battery        play_music               0220  media      media
+/sys/devices/platform/kcal_ctrl.0                             kcal                     0660  root       system
+/sys/devices/platform/kcal_ctrl.0                             kcal_ctrl                0660  root       system
+/sys/devices/platform/kcal_ctrl.0                             kcal_min                 0660  root       system
 /sys/devices/system/cpu/cpu*                                  online                   0664  root       system
 /sys/devices/virtual/compass/akm8963                          accel                    0660  system     system
 /sys/devices/virtual/compass/akm8963                          delay_acc                0660  system     system
