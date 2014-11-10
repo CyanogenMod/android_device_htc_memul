@@ -16,7 +16,7 @@
 /dev/adsprpc-smd          0664   system     system
 /dev/akm8963_dev          0660   system     system
 /dev/cm3602               0640   compass    system
-/dev/diag                 0666   radio      radio
+/dev/diag                 0660   radio      radio
 /dev/diag_arm9            0660   radio      radio
 /dev/genlock              0666   system     system
 /dev/hw_random            0660   system     system
@@ -87,7 +87,7 @@
 /dev/smdcnt_rev7          0640   radio      radio
 /dev/smdcnt_rev8          0640   radio      radio
 /dev/smd_cxm_qmi          0640   radio      radio
-/dev/time_helper          0644   system     camera
+/dev/time_helper          0640   system     camera
 /dev/ttyHSL1              0660   system     system
 /dev/ttyHSUSB1            0600   system     system
 /dev/uio0                 0660   system     system
@@ -98,7 +98,7 @@
 /dev/wcnss_ctrl           0660   system     system
 /dev/wcnss_wlan           0660   system     system
 
-/sys/devices/f9928000.i2c/i2c-4/4-0033/leds/flashlight        brightness               0666  system     system
+/sys/devices/f9928000.i2c/i2c-4/4-0033/leds/flashlight        brightness               0660  system     system
 /sys/devices/fb000000.qcom,wcnss-wlan/ieee80211/phy0/rfkill0  state                    0660  bluetooth  bluetooth
 /sys/devices/leds-qpnp-*                                      leds/green/blink         0644  system     system
 /sys/devices/leds-qpnp-*                                      leds/green/brightness    0644  system     system
@@ -127,10 +127,39 @@
 /sys/devices/virtual/htc_accessory/fm                         flag                     0644  system     system
 /sys/devices/virtual/htc_accessory/tty                        flag                     0644  system     system
 /sys/devices/virtual/htc_g_sensor/g_sensor                    enable_cir_interrupt     0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    bandwidth                0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    delay                    0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    eeprom_writing           0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    enable                   0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    enable_int               0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    fast_calibration_x       0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    fast_calibration_y       0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    fast_calibration_z       0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    flat_hold_time           0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    flat_theta               0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    high_g_duration          0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    high_g_threshold         0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    int_mode                 0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    low_g_duration           0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    low_g_threshold          0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    mode                     0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    orient_blocking          0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    orient_hyst              0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    orient_mode              0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    orient_theta             0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    range                    0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    reg                      0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    selftest                 0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    slope_duration           0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    slope_threshold          0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    tap_duration             0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    tap_quiet                0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    tap_samp                 0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    tap_shock                0660  system     system
+/sys/devices/virtual/htc_g_sensor/g_sensor                    tap_threshold            0660  system     system
 /sys/devices/virtual/optical_sensors/proximity                PhoneApp_status          0660  radio      radio
 /sys/devices/virtual/optical_sensors/proximity                ps_adc                   0660  radio      radio
 /sys/devices/virtual/optical_sensors/proximity                ps_canc                  0660  radio      radio
 /sys/devices/virtual/optical_sensors/proximity                ps_kadc                  0660  radio      radio
 /sys/devices/virtual/smdpkt/smdcntl*                          open_timeout             0664  radio      radio
 /sys/devices/virtual/timed_output/vibrator                    voltage_level            0644  system     system
-
