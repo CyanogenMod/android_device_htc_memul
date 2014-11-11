@@ -193,7 +193,12 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    wcnss_service
+    dhcpcd.conf \
+    hostapd \
+    hostapd_default.conf \
+    libwpa_client \
+    wcnss_service \
+    wpa_supplicant
 
 # WiFi config
 PRODUCT_COPY_FILES += \
@@ -204,6 +209,7 @@ PRODUCT_COPY_FILES += \
 # WPA Supplicant
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:/system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:/system/etc/wifi/wpa_supplicant_overlay.conf
 
 # We have enough space to hold precise GC data
