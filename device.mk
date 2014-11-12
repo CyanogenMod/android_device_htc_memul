@@ -24,6 +24,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudio-resampler \
     libaudioamp \
+    libqcomvisualizer \
     tinymix
 
 PRODUCT_COPY_FILES += \
