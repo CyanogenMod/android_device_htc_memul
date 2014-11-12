@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudio-resampler \
     libaudioamp \
+    libqcomvisualizer \
     tinymix
 
 # Audio configuration
