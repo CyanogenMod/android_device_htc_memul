@@ -72,6 +72,9 @@ USE_OPENGL_RENDERER := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 BOARD_EGL_CFG := device/htc/memul/configs/egl.cfg
 
+# Includes
+TARGET_SPECIFIC_HEADER_PATH := device/htc/memul/include
+
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
