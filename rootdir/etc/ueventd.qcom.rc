@@ -98,7 +98,7 @@
 /dev/wcnss_ctrl           0660   system     system
 /dev/wcnss_wlan           0660   system     system
 
-/sys/devices/f9928000.i2c/i2c-4/4-0033/leds/flashlight        brightness               0660  system     system
+/sys/devices/f9928000.i2c/i2c-4/4-0033/leds/flashlight        brightness               0660  system     camera
 /sys/devices/fb000000.qcom,wcnss-wlan/ieee80211/phy0/rfkill0  state                    0660  bluetooth  bluetooth
 /sys/devices/leds-qpnp-*                                      leds/green/blink         0644  system     system
 /sys/devices/leds-qpnp-*                                      leds/green/brightness    0644  system     system
