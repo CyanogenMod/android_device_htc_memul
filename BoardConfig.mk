@@ -63,6 +63,9 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 3355443200
 # Flags
 COMMON_GLOBAL_CFLAGS += -DHTCLOG
 
+# Fonts
+EXTENDED_FONT_FOOTPRINT := true
+
 # Graphics
 BOARD_EGL_CFG := device/htc/memul/configs/egl.cfg
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
