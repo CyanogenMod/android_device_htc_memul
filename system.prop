@@ -37,7 +37,6 @@ rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 ro.baseband.arch=msm
 ro.telephony.call_ring.multiple=0
 ro.telephony.default_network=9
-ro.telephony.ril_class=HTCQualcommRIL
 ro.use_data_netmgrd=true
 telephony.lteOnGsmDevice=1
 ro.ril.enable.a52=0
