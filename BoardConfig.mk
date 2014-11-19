@@ -109,32 +109,6 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 # RIL
 BOARD_PROVIDES_LIBRIL := true
 
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/htc/memul/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    app.te \
-    bluetooth.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file_contexts \
-    file.te \
-    hci_init.te \
-    healthd.te \
-    init_shell.te \
-    init.te \
-    keystore.te \
-    kickstart.te \
-    mediaserver.te \
-    rild.te \
-    surfaceflinger.te \
-    system.te \
-    ueventd.te \
-    wpa_socket.te \
-    wpa.te
-
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
 
