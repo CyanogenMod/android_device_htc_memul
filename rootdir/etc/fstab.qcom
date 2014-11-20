@@ -18,10 +18,10 @@
 /dev/block/platform/msm_sdcc.1/by-name/fataldevlog /fataldevlog    ext4 noatime,nosuid,nodev wait
 
 # SD Card
-/devices/msm_sdcc.2/mmc_host                       auto            vfat defaults             voldmanaged=sdcard1:auto,noemulatedsd
+/devices/msm_sdcc.2/mmc_host*                       auto            vfat defaults             voldmanaged=sdcard1:auto,noemulatedsd
 
 # USB Storage
-/devices/platform/msm_hsusb_host/usb               auto            auto defaults             voldmanaged=usbdisk:auto
+/devices/platform/msm_hsusb_host/usb*               auto            auto defaults             voldmanaged=usbdisk:auto
 
 # ZRAM
 /dev/block/zram0                                   none            swap defaults             zramsize=134217728
