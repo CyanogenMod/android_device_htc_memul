@@ -168,11 +168,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     power.msm8226
 
-# QCOM rngd
-PRODUCT_PACKAGES += \
-    qrngd \
-    qrngp
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \

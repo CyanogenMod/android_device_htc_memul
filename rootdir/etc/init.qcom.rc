@@ -309,18 +309,6 @@ service qmuxd /system/bin/qmuxd
     user radio
     group radio audio gps bluetooth
 
-service qrngd /system/bin/qrngd -f
-   class main
-   user root
-   group root
-
-service qrngp /system/bin/qrngp
-    class main
-    user root
-    group root
-    oneshot
-    disabled
-
 service rmt_storage /system/bin/rmt_storage modem_st1 modem_st2 fsc recovery radio_config cdma_record
     class core
     user root
