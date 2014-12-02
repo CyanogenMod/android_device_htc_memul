@@ -65,6 +65,7 @@
             <Quirk name="requires-allocate-on-output-ports"/>
         </MediaCodec>
     </Decoders>
+    <Include href="media_codecs_ffmpeg.xml" />
     <Include href="media_codecs_google_audio.xml" />
     <Include href="media_codecs_google_telephony.xml" />
     <Include href="media_codecs_google_video.xml" />
