@@ -193,6 +193,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     dhcpcd.conf \
     hostapd \
+    hostapd_default.conf \
     libwpa_client \
     wcnss_service \
     wpa_supplicant \
