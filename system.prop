@@ -1,7 +1,6 @@
 # system.prop for memul
 
 # Audio
-af.resampler.quality=4
 ro.qc.sdk.audio.fluencetype=fluence
 
 # GPS
