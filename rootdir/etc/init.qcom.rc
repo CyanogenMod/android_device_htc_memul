@@ -183,6 +183,9 @@ on boot
     # Create symlink for fb1 as HDMI
     symlink /dev/graphics/fb1 /dev/graphics/hdmi
 
+    # Our blobs expect the diag node to be called /dev/diag
+    symlink /dev/htc_diag /dev/diag
+
 # GPS
     mkdir /dev/socket/qmux_gps 2770 gps gps
 
