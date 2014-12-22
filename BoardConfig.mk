@@ -44,6 +44,7 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 # Board
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_VENDOR := htc
+MALLOC_IMPL := dlmalloc
 TARGET_BOARD_PLATFORM := msm8226
 
 # Bootloader
