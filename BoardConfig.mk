@@ -111,6 +111,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # RIL
 BOARD_PROVIDES_LIBRIL := true
 
+# SELinux
+-include device/qcom/sepolicy/sepolicy.mk
+
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
 
