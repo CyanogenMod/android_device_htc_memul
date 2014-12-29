@@ -113,6 +113,28 @@ BOARD_PROVIDES_LIBRIL := true
 
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += device/htc/memul/sepolicy
+BOARD_SEPOLICY_UNION += \
+    device.te \
+    file_contexts \
+    file.te \
+    init.te \
+    kcal_dev.te \
+    kernel.te \
+    mediaserver.te \
+    mm-qcamerad.te \
+    mpdecision.te \
+    platform_app.te \
+    property_contexts \
+    recovery.te \
+    rmt_storage.te \
+    system_app.te \
+    system_server.te \
+    thermal-engine.te \
+    ueventd.te \
+    vibe_dev.te \
+    vold.te
+
 
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
