@@ -115,6 +115,7 @@ BOARD_PROVIDES_LIBRIL := true
 -include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/memul/sepolicy
 BOARD_SEPOLICY_UNION += \
+    akmd.te \
     device.te \
     file_contexts \
     file.te \
