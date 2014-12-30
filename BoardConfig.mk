@@ -136,6 +136,7 @@ BOARD_SEPOLICY_UNION += \
     thermal-engine.te \
     ueventd.te \
     vibe_dev.te \
+    wpa.te \
     vold.te
 
 
