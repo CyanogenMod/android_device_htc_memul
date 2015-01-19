@@ -106,14 +106,10 @@ on post-fs-data
     mkdir /data/audio 2775 media audio
     mkdir /data/radio 2770 radio radio
 
-    # Link widevine drm library path
-    symlink /system/vendor/lib /vendor/lib
-
     # time-services
     mkdir /data/time 0700 system system
 
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
-
 
     mkdir /data/misc/audio 0770 audio audio
 
@@ -148,9 +144,6 @@ on boot
     # To prevent out of WINDOW ACK from making
     # connection tracking to treat them as INVALID packet
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
-
-    # Create symlink for fb1 as HDMI
-    symlink /dev/graphics/fb1 /dev/graphics/hdmi
 
     # Our blobs expect the diag node to be called /dev/diag
     symlink /dev/htc_diag /dev/diag
