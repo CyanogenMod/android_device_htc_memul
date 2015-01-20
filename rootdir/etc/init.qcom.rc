@@ -197,6 +197,11 @@ on boot
     swapon_all fstab.qcom
 
 # Services start here
+service adsprpcd /system/bin/adsprpcd
+    class main
+    user media
+    group media
+
 service akmd /system/bin/akmd
     class main
     user system

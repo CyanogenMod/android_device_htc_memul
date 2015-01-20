@@ -19,6 +19,7 @@ vendor/lib/soundfx/libqcreverb.so
 bin/hci_qcomm_init
 
 # Camera
+bin/adsprpcd
 bin/mm-qcamera-daemon
 etc/firmware/cpp_firmware_v1_1_1.fw
 etc/firmware/cpp_firmware_v1_1_6.fw
