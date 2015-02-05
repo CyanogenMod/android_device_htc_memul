@@ -15,7 +15,6 @@ on boot
     write /sys/module/msm_pm/modes/cpu3/standalone_power_collapse/idle_enabled 1
     write /sys/module/msm_pm/modes/cpu0/power_collapse/idle_enabled 1
     start chargeled
-    start choice_fn
 
 on property:sys.usb.config=none
     write /sys/devices/platform/android_usb/usb_function_switch 1
@@ -29,22 +28,29 @@ on property:sys.usb.config=mtp,adb
     write /sys/devices/platform/android_usb/usb_function_switch 130
     setprop sys.usb.state ${sys.usb.config}
 
+on charger
+    start choice_fn
+    start chargeled
+
 service chargeled /sbin/chargeled
     disabled
+    seclabel u:r:healthd:s0
 
 service choice_fn /sbin/choice_fn
-    oneshot
+    disabled
+    seclabel u:r:recovery:s0
 
 service detect_key /sbin/detect_key
     disabled
-    oneshot
+    seclabel u:r:recovery:s0
 
 service offmode_charging /sbin/offmode_charging
     disabled
+    seclabel u:r:healthd:s0
 
 service power_test /sbin/power_test
     disabled
-    oneshot
+    seclabel u:r:recovery:s0
 
 # Powersave
 on property:sys.perf.profile=0
