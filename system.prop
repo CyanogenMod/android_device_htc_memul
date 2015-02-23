@@ -76,6 +76,7 @@ ril.subscription.types=NV,RUIM
 persist.timed.enable=true
 
 # USB
+persist.sys.isUsbOtgEnabled=true
 persist.sys.usb.config=mtp
 
 # Wifi
