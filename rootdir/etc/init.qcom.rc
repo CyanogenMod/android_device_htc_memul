@@ -80,8 +80,8 @@ on fs
     mkdir /firmware/wcnss 0771 system system
     mkdir /fataldevlog
 
-    # mount all mmc partitions
-    mount_all ./fstab.qcom
+    mount_all fstab.qcom
+    swapon_all fstab.qcom
 
     mkdir /mnt/qcks 0700 root system
     mount tmpfs tmpfs /mnt/qcks size=20m,mode=0750,gid=1000
@@ -178,9 +178,6 @@ on boot
 # Bluetooth
     chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
     chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
-
-# Activate ZRAM
-    swapon_all fstab.qcom
 
 # Services start here
 service adsprpcd /system/bin/adsprpcd
